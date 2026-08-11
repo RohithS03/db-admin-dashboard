@@ -1,0 +1,11 @@
+import sqlite3, os
+db_path = os.path.join(os.path.dirname(__file__), "sample.db")
+conn = sqlite3.connect(db_path)
+c = conn.cursor()
+c.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, email TEXT);")
+c.execute("CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, name TEXT, price REAL);")
+c.executemany("INSERT INTO users (username, email) VALUES (?, ?)", [("rohith", "rohith@example.com"), ("admin", "admin@example.com")])
+c.executemany("INSERT INTO products (name, price) VALUES (?, ?)", [("Laptop", 1200.0), ("Mouse", 25.0)])
+conn.commit()
+conn.close()
+print("Sample database seeded successfully!")

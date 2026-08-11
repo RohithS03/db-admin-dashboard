@@ -1,0 +1,9 @@
+body { margin:0; font-family:sans-serif; background:#1a1a2e; color:#e0e0e0; display:flex; }
+.sidebar { width:240px; background:#16213e; padding:20px; min-height:100vh; }
+.sidebar a { display:block; color:#4ecca3; text-decoration:none; margin:10px 0; }
+.content { flex:1; padding:30px; }
+.data-table { width:100%; border-collapse:collapse; margin-top:20px; }
+.data-table th, .data-table td { border:1px solid #0f3460; padding:10px; text-align:left; }
+.data-table th { background:#0f3460; }
+.error { background:#e94560; padding:10px; margin-top:10px; border-radius:4px; }
+button { background:#4ecca3; color:#1a1a2e; border:none; padding:10px 20px; cursor:pointer; font-weight:bold; }

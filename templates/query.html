@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>SQL Console</h1>
+    <form method="post" action="/query">
+        <textarea name="sql_query" rows="5" style="width:100%;">{{ query }}</textarea><br>
+        <button type="submit">Execute Query</button>
+    </form>
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    {% if columns %}
+        <table class="data-table">
+            <thead><tr>{% for col in columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+            <tbody>{% for row in rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+        </table>
+    {% endif %}
+{% endblock %}
